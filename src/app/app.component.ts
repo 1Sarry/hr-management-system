@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { EmployeeComponent } from './employee/employee.component';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +8,14 @@ import { EmployeeComponent } from './employee/employee.component';
 })
 export class AppComponent {
   title = 'hr-management-system';
-
-  constructor(private dialog: MatDialog) {}
-
-  openEmp() {
-    this.dialog.open(EmployeeComponent)
-    console.log('clicked')
+  constructor(public dialog: MatDialog) {
   }
+  opened =false;
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+     width:'40%'
+    });
+  }
+
+
 }

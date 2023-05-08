@@ -8,20 +8,34 @@ import {
   MatIconModule, 
   MatButtonModule, 
   MatFormFieldModule, 
-  MatInputModule } 
+  MatInputModule, } 
   from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { EmployeeComponent } from './employee/employee.component';
 import { MatDialogModule } from '@angular/material';
 import { SalaryComponent } from './salary/salary.component';
-
-
+import { CompanyComponent } from './company/company.component';
+import { CandidateComponent } from './candidate/candidate.component';
+import { DepartmentComponent } from './department/department.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    SalaryComponent
+    SalaryComponent,
+    CompanyComponent,
+    CandidateComponent,
+    DepartmentComponent,
+    DialogComponent,
+    
+
   ],
+  entryComponents:[DialogComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,7 +46,12 @@ import { SalaryComponent } from './salary/salary.component';
     MatSidenavModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatRadioModule,
+    FormsModule
     
 
   ],

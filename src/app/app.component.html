@@ -5,8 +5,12 @@
     </button>
     <span>HR Management System</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button (click)="openEmp()">
-      Add
-    </button>
+    <button mat-raised-button (click)="openDialog()">Add New</button>
   </mat-toolbar>
 </p>
+ <mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="opened">SideNav</mat-sidenav>
+    <mat-sidenav-content> Menu 
+      <button (click)="opened=!opened">Side Bar Negn</button>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

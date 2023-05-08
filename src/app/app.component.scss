@@ -1,4 +1,15 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-  
+
+  mat-sidenav-container{
+    height: 90%;
+    //margin-top: 100px;
+  } 
+  mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+  }
+  mat-sidenav{
+    background-color: #ececec;
+    width: 300px;
+  }

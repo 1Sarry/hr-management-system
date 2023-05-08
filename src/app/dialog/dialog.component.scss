@@ -1,0 +1,25 @@
+mat-form-field{
+    width: 100%;
+    padding-left: 0;
+    
+}
+mat-form-field:first-child{
+    padding-top: 20px;
+}
+mat-form-field:nth-last-child(3){
+    padding-top: 20px;
+}
+.mat-dialog-content{
+ padding: 0!important; 
+ padding-right: 10px!important;  
+}
+#picker{
+    display: inline-flex;
+}
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+    padding-left: 10px;
+  }
+  .mat-radio-content {
+    padding-top: 10px!important;
+  }
