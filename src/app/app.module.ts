@@ -22,7 +22,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {MatListModule} from '@angular/material/list';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatTableModule } from '@angular/material';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort' ;
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +38,8 @@ import {FormsModule} from '@angular/forms'
     CandidateComponent,
     DepartmentComponent,
     DialogComponent,
-    
+    DashboardComponent,
+    DataTableComponent
 
   ],
   entryComponents:[DialogComponent,],
@@ -51,7 +58,12 @@ import {FormsModule} from '@angular/forms'
     MatNativeDateModule,
     MatSelectModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    MatListModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
     
 
   ],

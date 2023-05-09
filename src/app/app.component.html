@@ -1,16 +1,34 @@
 <p>
   <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <button (click)="drawer.toggle()" mat-icon-button >
+      <mat-icon>home</mat-icon>
     </button>
     <span>HR Management System</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button (click)="openDialog()">Add New</button>
+    <!-- <button mat-raised-button (click)="openDialog()">Add New</button> -->
   </mat-toolbar>
 </p>
- <mat-sidenav-container>
-    <mat-sidenav mode="side" [(opened)]="opened">SideNav</mat-sidenav>
-    <mat-sidenav-content> Menu 
-      <button (click)="opened=!opened">Side Bar Negn</button>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+ <mat-drawer-container autosize>
+  <!-- using the #drawer identifier we can control the toggle functionalty on the toolbar -->
+    <mat-drawer #drawer mode="side" opened="false" position="start"> 
+      <mat-nav-list>
+          <a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active"><mat-icon class="white-icon">dashboard</mat-icon>Dashboard</a>
+          <a mat-list-item routerLink="/company" routerLinkActive="list-item-active"><mat-icon class="white-icon">business</mat-icon>Company</a>
+        <a mat-list-item routerLink="/employee" routerLinkActive="list-item-active">
+          <mat-icon class="white-icon">person</mat-icon>Employee
+        </a>
+          <a mat-list-item routerLink="/department" routerLinkActive="list-item-active"> <mat-icon class="white-icon">ballot</mat-icon>Department</a>
+       <a mat-list-item routerLink="/salary" routerLinkActive="list-item-active">
+         <mat-icon class="white-icon">euro_symbol</mat-icon>Salary
+       </a>
+          <a mat-list-item routerLink="/candidate" routerLinkActive="list-item-active">
+            <mat-icon class="white-icon ">assignment_ind</mat-icon>Candidate
+          </a>
+      </mat-nav-list>
+    </mat-drawer> 
+    <mat-drawer-content>
+      <div style="text-align: center; min-height: 600px;">
+      <router-outlet></router-outlet>
+    </div>>
+    </mat-drawer-content>
+  </mat-drawer-container>

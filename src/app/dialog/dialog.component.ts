@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogComponent implements OnInit {
 
-  genderOptions =["Male", "Female"]
+  genderOptions =["Male", "Female"];
+  employeeForm : FormGroup;
 
-  constructor() { }
+  constructor( private formBuilder : FormBuilder) { }
 
   ngOnInit() {
+    this.employeeForm = this.formBuilder.group({
+      fullName:'',
+      idNumber:'',
+      birthDate:'',
+      positionName: '',
+      hireDate:''
+    })
   }
 
+  addEmployee(){
+    console.log(this.employeeForm.value)
+    console.log("test")
+  }
 }

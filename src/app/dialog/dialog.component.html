@@ -1,43 +1,49 @@
+
 <h1 mat-dialog-title>Add New Employee Form</h1>
 <div mat-dialog-content >
-    <mat-form-field appearance="outline">
-        <mat-label>Full Name</mat-label>
-        <input matInput placeholder="Full Name">
-      </mat-form-field>
+    <form  [formGroup]="employeeForm">
       <mat-form-field appearance="outline">
-        <mat-label>ID</mat-label>
-        <input matInput placeholder="ID">
-      </mat-form-field>
-      <label for="" > Sex </label>
-      <div mat-radio-component>
-          <mat-radio-group aria-label="Sex">
-            <mat-radio-button value="1">Male</mat-radio-button>
-            <mat-radio-button value="2">Female</mat-radio-button>
-          </mat-radio-group>
-      </div>
-      <mat-form-field appearance="outline">
-        <mat-label>Date of Birth</mat-label>
-        <input matInput [matDatepicker]="picker1">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Position</mat-label>
-        <mat-select placeholder="Position">
-            <mat-option value="">Software Developer</mat-option>
-            <mat-option value="">Finance Manager</mat-option>
-            <mat-option value="">CEO</mat-option>
-            <mat-option value="">Network Engineer</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Date of Hire</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      
-      
+          <mat-label>Full Name</mat-label>
+          <input formControlName="fullName" matInput placeholder="Full Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input formControlName="idNumber" matInput placeholder="ID">
+        </mat-form-field>
+        <!-- <label for="" > Sex </label>
+        <div mat-radio-component>
+            <mat-radio-group aria-label="Sex">
+              <mat-radio-button class="example-radio-button" value="1">Male</mat-radio-button>
+              <mat-radio-button value="2">Female</mat-radio-button>
+            </mat-radio-group>
+        </div> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Birth</mat-label>
+          <input formControlName="birthDate" matInput [matDatepicker]="picker1">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Position</mat-label>
+          <mat-select formControlName="positionName" placeholder="Position">
+              <mat-option value="">Software Developer</mat-option>
+              <mat-option value="">Finance Manager</mat-option>
+              <mat-option value="">CEO</mat-option>
+              <mat-option value="">Network Engineer</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Hire</mat-label>
+          <input formControlName="hireDate" matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button style="margin-left: 8px;" color="warn" mat-dialog-close>Cancel</button>
+  <button type="submit" style="margin-left: 12px!important;" mat-raised-button color="primary" (click)="addEmployee()" mat-dialog-close>Save</button>
+
 </div>
